@@ -1,0 +1,224 @@
+{
+  "@@locale": "tr",
+  "appTitle": "ephtodo",
+  "startupFailed": "ephtodo güvenli biçimde başlatılamadı.",
+  "retry": "Yeniden dene",
+  "continueLabel": "Devam et",
+  "back": "Geri",
+  "finish": "Çalışma alanını aç",
+  "welcomeTitle": "Önemli şeyler için sakin bir yer",
+  "vaultTitle": "Taşınabilir kasanızı seçin",
+  "completionTitle": "Bir görev tamamlandıktan sonra",
+  "trashTitle": "Çöp kutusu saklama süresi",
+  "themeTitle": "Çalışma alanı temasını seçin",
+  "syncTitle": "Yerel ağ eşitleme",
+  "shortcutsTitle": "Kısayollar ve yapışkan pencere",
+  "finishTitle": "Temel hazır",
+  "syncUnavailable": "Eşitleme Faz 1'de devre dışıdır.",
+  "workspacePlaceholder": "Çalışma alanı temeliniz hazır.",
+  "showSticky": "Yapışkan pencereyi göster",
+  "hideSticky": "Yapışkan pencereyi gizle",
+  "today": "Bugün",
+  "upcoming": "Yaklaşan",
+  "projects": "Projeler",
+  "completed": "Tamamlanan",
+  "archive": "Arşiv",
+  "trash": "Çöp Kutusu",
+  "settings": "Ayarlar",
+  "search": "Görev, proje ve etiket ara",
+  "quickAdd": "Hızlı ekle",
+  "taskTitle": "Görev başlığı",
+  "description": "Açıklama",
+  "priority": "Öncelik",
+  "startDate": "Başlangıç tarihi (YYYY-AA-GG)",
+  "dueDate": "Bitiş tarihi (YYYY-AA-GG)",
+  "save": "Kaydet",
+  "cancel": "İptal",
+  "edit": "Düzenle",
+  "restore": "Geri yükle",
+  "deletePermanently": "Kalıcı olarak sil",
+  "emptyTrash": "Çöp Kutusunu boşalt",
+  "confirmEmptyTrash": "Çöp Kutusundaki her şey kalıcı olarak silinsin mi?",
+  "nothingToday": "Bugün için planlanmış bir şey yok.",
+  "nothingUpcoming": "Yaklaşan görev yok.",
+  "nothingHere": "Burada bir şey yok.",
+  "overdue": "Gecikmiş",
+  "dueToday": "Bugün bitiyor",
+  "pinned": "Sabitlenmiş",
+  "completedToday": "Bugün tamamlanan",
+  "tomorrow": "Yarın",
+  "thisWeek": "Bu Hafta",
+  "nextWeek": "Gelecek Hafta",
+  "laterThisMonth": "Bu Ayın Devamı",
+  "future": "Gelecek",
+  "newProject": "Yeni proje",
+  "newFolder": "Yeni klasör",
+  "newList": "Yeni görev listesi",
+  "newWorkspace": "Yeni çalışma alanı",
+  "name": "Ad",
+  "rename": "Yeniden adlandır",
+  "moveUp": "Yukarı taşı",
+  "moveDown": "Aşağı taşı",
+  "complete": "Tamamla",
+  "reopen": "Yeniden aç",
+  "sendToTrash": "Çöp Kutusuna taşı",
+  "invalidEntry": "Girilen değerleri kontrol edin.",
+  "weekStartsMonday": "Haftalar pazartesi günü başlar.",
+  "syncDisabled": "Yerel ağ eşitleme devre dışıdır.",
+  "notesLater": "Notlar ve ses sonraki bir fazda eklenecek.",
+  "shortcuts": "Ctrl+N görev · Ctrl+Shift+N proje · Ctrl+F ara · Ctrl+1/2/3 gezin · Ctrl+Shift+S yapışkan",
+  "stickyEmpty": "Bugün için görev yok.",
+  "add": "Ekle"
+  ,"status": "Durum"
+  ,"projectList": "Proje veya görev listesi"
+  ,"tags": "Etiketler"
+  ,"subtasks": "Alt görevler"
+  ,"parentTask": "Üst görev"
+  ,"reminderDate": "Hatırlatma tarihi (YYYY-AA-GG)"
+  ,"recurrence": "Yineleme kuralı"
+  ,"pinTask": "Görevi sabitle"
+  ,"move": "Taşı"
+  ,"moveTo": "Şuraya taşı"
+  ,"moveLeft": "Üst düğüme taşı"
+  ,"moveRight": "Önceki kardeşin içine taşı"
+  ,"hierarchyActions": "Hiyerarşi işlemleri"
+  ,"invalidHierarchyError": "Bu hiyerarşi taşımasına izin verilmiyor."
+  ,"invalidDatesError": "Başlangıç, bitiş ve hatırlatma tarihlerini kontrol edin."
+  ,"missingNodeError": "Bu öğe artık yok."
+  ,"staleRevisionError": "Bu öğe başka bir yerde değişti. Yenileyip tekrar deneyin."
+  ,"duplicateTagError": "Bu ada sahip bir etiket zaten var."
+  ,"databaseError": "Yerel değişiklik kaydedilemedi."
+  ,"retentionError": "Bu kalıcı silme işlemine izin verilmiyor."
+  ,"filter": "Filtrele"
+  ,"allPriorities": "Tüm öncelikler"
+  ,"selectedTaskHint": "Seçili görev: Ctrl+Enter tamamla · Ctrl+E düzenle · Delete çöpe taşı"
+  ,"noParent": "Üst görev yok"
+  ,"noProject": "Gelen Kutusu"
+  ,"createTag": "Etiket oluştur"
+  ,"archivedProjects": "Arşivlenmiş hiyerarşi"
+  ,"trashedProjects": "Çöpteki hiyerarşi"
+  ,"restoreHierarchy": "Hiyerarşiyi geri yükle"
+  ,"hierarchyShortcutHint": "Hiyerarşi: F2 yeniden adlandır · Alt+M taşı · Alt+↑/↓ sırala"
+  ,"notes": "Notlar"
+  ,"audio": "Ses"
+  ,"noteTitle": "Not başlığı"
+  ,"noteBody": "Bir not yazın…"
+  ,"newNote": "Yeni not"
+  ,"openQuickNote": "Hızlı Notu aç"
+  ,"searchNotes": "Notlarda ara"
+  ,"noNotes": "Burada not yok."
+  ,"selectNote": "Bir not seçin veya oluşturun."
+  ,"saving": "Kaydediliyor…"
+  ,"saved": "Kaydedildi"
+  ,"words": "kelime"
+  ,"characters": "karakter"
+  ,"monospace": "Eş aralıklı yazı"
+  ,"vaultUnavailable": "Kasa kullanılamıyor. Düzenleme duraklatıldı."
+  ,"record": "Kaydet"
+  ,"pause": "Duraklat"
+  ,"resume": "Sürdür"
+  ,"stop": "Durdur"
+  ,"play": "Oynat"
+  ,"noAudio": "Henüz sesli not yok."
+  ,"audioError": "Ses işlemi başarısız"
+  ,"audioPlaybackLimits": "WAV oynatmada arama, ses düzeyi, duraklatma veya bitiş geri çağrısı yoktur."
+  ,"refresh": "Yenile"
+  ,"openMain": "Ana uygulamayı aç"
+  ,"compactMode": "Kompakt mod"
+  ,"collapseCompleted": "Tamamlananları daralt"
+  ,"linkedProjectId": "Bağlı proje/liste kimliği"
+  ,"linkedTaskId": "Bağlı görev kimliği"
+  ,"policyArchive": "Arşivle"
+  ,"policyTrash": "Çöp kutusuna taşı"
+  ,"policyKeepCompleted": "Tamamlananlarda tut"
+  ,"retentionThirtyDays": "30 gün"
+  ,"retentionNever": "Süresiz sakla"
+  ,"completionPolicyHint": "Bir görevi tamamladıktan hemen sonra nereye gideceği."
+  ,"language": "Dil"
+  ,"languageHint": "Çalışma alanı, yapışkan pencere ve hızlı not bu seçimi izler."
+  ,"languageSystem": "Sistem varsayılanı"
+  ,"languageEnglish": "English"
+  ,"languageTurkish": "Türkçe"
+  ,"someday": "Bir gün · Tarihsiz"
+  ,"areYouSure": "Emin misiniz?"
+  ,"confirmTrashTask": "Bu görev Çöp Kutusuna taşınsın mı?"
+  ,"confirmDeleteForever": "Bu görev kalıcı olarak silinsin mi?"
+  ,"delete": "Sil"
+  ,"projectOptional": "Proje (isteğe bağlı)"
+  ,"generalSection": "Genel"
+  ,"generalSectionHint": "Görev yaşam döngüsü ve çalışma alanı davranışı"
+  ,"completionSection": "Tamamlama"
+  ,"trashRetentionSection": "Çöp kutusu saklama"
+  ,"backupSection": "Yedekleme ve kurtarma"
+  ,"syncSection": "Yerel eşitleme"
+  ,"openVaultForBackups": "Yedekleri yönetmek için bir kasa açın."
+  ,"syncLoadFailed": "Eşitleme ayarları bu cihazda yüklenemedi."
+  ,"linkedTask": "Bağlı görev (isteğe bağlı)"
+  ,"noLinkedTask": "Bağlı görev yok"
+  ,"taskStatusOpen": "Açık"
+  ,"taskStatusInProgress": "Devam ediyor"
+  ,"taskStatusCompleted": "Tamamlandı"
+  ,"taskStatusCancelled": "İptal"
+  ,"stickySourceToday": "Bugün"
+  ,"stickySourceTomorrow": "Yarın"
+  ,"stickySourceThisWeek": "Bu hafta"
+  ,"stickySourceProject": "Proje"
+  ,"stickySourceFolderOrList": "Klasör veya liste"
+  ,"stickySourcePinned": "Sabitlenmiş"
+  ,"themeSection": "Tema"
+  ,"themeSectionHint": "Çalışma alanına ve yardımcı pencerelere uygulanır."
+  ,"themeObsidianBlack": "Obsidyen Siyah"
+  ,"themeGraphite": "Grafit"
+  ,"themeMidnightIndigo": "Gece İndigosu"
+  ,"themeNordicLight": "Nordik Açık"
+  ,"themeWarmPaper": "Sıcak Kağıt"
+  ,"addNote": "Not ekle"
+  ,"addTask": "Görev ekle"
+  ,"moveToProject": "Projeye taşı"
+  ,"assignToProject": "Projeye ata"
+  ,"searchProjectsSection": "Projeler"
+  ,"searchTasksSection": "Görevler"
+  ,"backupTitle": "Yedekleme ve kurtarma"
+  ,"backupSubtitle": "Kasasının taşınabilir, doğrulanmış kopyaları"
+  ,"backupCreateTitle": "Kasa yedeği oluştur"
+  ,"backupCreateBody": "Notlar, ses, ekler ve SHA-256 bütünlük bildirimiyle tutarlı bir veritabanı anlık görüntüsü dışa aktarır."
+  ,"backupCreateButton": "Dışa aktarma klasörü seç"
+  ,"backupRestoreTitle": "Güvenli geri yükle"
+  ,"backupRestoreBody": "Ayrı bir kasa oluşturmadan önce arşiv yollarını, sürümleri, karmaları ve SQLite bütünlüğünü doğrular."
+  ,"backupRestoreButton": "Yedek dosyası seç"
+  ,"backupSafetyNote": "Yedekler şifrelenmez. Bunları orijinal kasa kadar dikkatli saklayın. Geri yükleme bozulma ve güvenli olmayan yolları tespit eder; otomatik veritabanı onarımı denemez."
+  ,"backupChooseExportFolder": "Bir dışa aktarma klasörü seçin"
+  ,"backupChooseFile": "Bir ephtodo yedeği seçin"
+  ,"backupChooseRestoreParent": "Geri yüklenen kasa için bir üst klasör seçin"
+  ,"backupRestoreConfirmTitle": "Yeni bir kasaya geri yüklensin mi?"
+  ,"backupRestoreConfirmBody": "ephtodo her dosyayı doğrular ve yeni bir kasa klasörü oluşturur. Etkin kasanız değiştirilmez veya üzerine yazılmaz."
+  ,"backupValidateRestore": "Doğrula ve geri yükle"
+  ,"backupFailedGeneric": "İşlem, etkin kasayı değiştirmeden başarısız oldu."
+  ,"syncHeadline": "Yerel eşitleme"
+  ,"syncHeadlineHint": "Gelecekteki bir mobil istemci için özel LAN temeli"
+  ,"syncSecureServer": "Güvenli sunucu"
+  ,"syncSecureServerHint": "Varsayılan olarak kapalıdır. Bulut aktarımı, genel tünel, UPnP veya joker bağlama yoktur."
+  ,"syncServerAvailable": "Sunucu kullanılabilir"
+  ,"syncServerOff": "Sunucu kapalı"
+  ,"syncStop": "Durdur"
+  ,"syncEnable": "Etkinleştir"
+  ,"syncRestoreOnLaunch": "Başlangıçta sunucuyu geri yükle"
+  ,"syncRestoreOnLaunchHint": "Yalnızca bu açık tercih sonrası; geçersiz kimlik bilgileri kapalı kalır."
+  ,"syncPassword": "Eşitleme parolası"
+  ,"syncPasswordHint": "Windows güvenli depolamada Argon2id ile korunur"
+  ,"syncSetOrChange": "Ayarla veya değiştir"
+  ,"syncPort": "Bağlantı noktası {port}"
+  ,"syncPortHint": "İzin verilen özel/dinamik aralık: 49152–65535"
+  ,"syncChange": "Değiştir"
+  ,"syncTlsFingerprint": "TLS parmak izi"
+  ,"syncCopyFingerprint": "Parmak izini kopyala"
+  ,"syncPairing": "Eşleştirme"
+  ,"syncPairingHint": "Kodlar beş dakika sonra sona erer, bir kez çalışır ve yine de masaüstü onayı gerektirir."
+  ,"syncCreatePairingCode": "Eşleştirme kodu oluştur"
+  ,"syncPairedDevices": "Eşleştirilmiş cihazlar"
+  ,"syncNoPairedDevices": "Henüz eşleştirilmiş cihaz yok."
+  ,"syncApprove": "Onayla"
+  ,"syncReject": "Reddet"
+  ,"syncRevoke": "İptal et"
+  ,"stickyEmptyFiltered": "Bu görünüm için görev yok."
+}

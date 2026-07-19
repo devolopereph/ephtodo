@@ -1,0 +1,224 @@
+{
+  "@@locale": "en",
+  "appTitle": "ephtodo",
+  "startupFailed": "ephtodo could not start safely.",
+  "retry": "Retry",
+  "continueLabel": "Continue",
+  "back": "Back",
+  "finish": "Open workspace",
+  "welcomeTitle": "A calm place for what matters",
+  "vaultTitle": "Choose your portable vault",
+  "completionTitle": "After completing a task",
+  "trashTitle": "Trash retention",
+  "themeTitle": "Choose your workspace theme",
+  "syncTitle": "Local-network sync",
+  "shortcutsTitle": "Shortcuts and sticky window",
+  "finishTitle": "Foundation ready",
+  "syncUnavailable": "Sync is disabled in Phase 1.",
+  "workspacePlaceholder": "Your workspace foundation is ready.",
+  "showSticky": "Show sticky window",
+  "hideSticky": "Hide sticky window",
+  "today": "Today",
+  "upcoming": "Upcoming",
+  "projects": "Projects",
+  "completed": "Completed",
+  "archive": "Archive",
+  "trash": "Trash",
+  "settings": "Settings",
+  "search": "Search tasks, projects, and tags",
+  "quickAdd": "Quick add",
+  "taskTitle": "Task title",
+  "description": "Description",
+  "priority": "Priority",
+  "startDate": "Start date (YYYY-MM-DD)",
+  "dueDate": "Due date (YYYY-MM-DD)",
+  "save": "Save",
+  "cancel": "Cancel",
+  "edit": "Edit",
+  "restore": "Restore",
+  "deletePermanently": "Delete permanently",
+  "emptyTrash": "Empty Trash",
+  "confirmEmptyTrash": "Permanently delete everything in Trash?",
+  "nothingToday": "Nothing scheduled for today.",
+  "nothingUpcoming": "No upcoming tasks.",
+  "nothingHere": "Nothing here.",
+  "overdue": "Overdue",
+  "dueToday": "Due today",
+  "pinned": "Pinned",
+  "completedToday": "Completed today",
+  "tomorrow": "Tomorrow",
+  "thisWeek": "This Week",
+  "nextWeek": "Next Week",
+  "laterThisMonth": "Later This Month",
+  "future": "Future",
+  "newProject": "New project",
+  "newFolder": "New folder",
+  "newList": "New task list",
+  "newWorkspace": "New workspace",
+  "name": "Name",
+  "rename": "Rename",
+  "moveUp": "Move up",
+  "moveDown": "Move down",
+  "complete": "Complete",
+  "reopen": "Reopen",
+  "sendToTrash": "Move to Trash",
+  "invalidEntry": "Check the entered values.",
+  "weekStartsMonday": "Weeks start on Monday.",
+  "syncDisabled": "Local-network sync is disabled.",
+  "notesLater": "Notes and audio arrive in a later phase.",
+  "shortcuts": "Ctrl+N task · Ctrl+Shift+N project · Ctrl+F search · Ctrl+1/2/3 navigate · Ctrl+Shift+S sticky",
+  "stickyEmpty": "No tasks for today.",
+  "add": "Add"
+  ,"status": "Status"
+  ,"projectList": "Project or task list"
+  ,"tags": "Tags"
+  ,"subtasks": "Subtasks"
+  ,"parentTask": "Parent task"
+  ,"reminderDate": "Reminder date (YYYY-MM-DD)"
+  ,"recurrence": "Recurrence rule"
+  ,"pinTask": "Pin task"
+  ,"move": "Move"
+  ,"moveTo": "Move to"
+  ,"moveLeft": "Move to parent"
+  ,"moveRight": "Move into previous sibling"
+  ,"hierarchyActions": "Hierarchy actions"
+  ,"invalidHierarchyError": "That hierarchy move is not allowed."
+  ,"invalidDatesError": "Check the start, due, and reminder dates."
+  ,"missingNodeError": "That item no longer exists."
+  ,"staleRevisionError": "This item changed elsewhere. Refresh and try again."
+  ,"duplicateTagError": "A tag with that name already exists."
+  ,"databaseError": "The local change could not be saved."
+  ,"retentionError": "That permanent deletion is not allowed."
+  ,"filter": "Filter"
+  ,"allPriorities": "All priorities"
+  ,"selectedTaskHint": "Selected task: Ctrl+Enter complete · Ctrl+E edit · Delete Trash"
+  ,"noParent": "No parent"
+  ,"noProject": "Inbox"
+  ,"createTag": "Create tag"
+  ,"archivedProjects": "Archived hierarchy"
+  ,"trashedProjects": "Trashed hierarchy"
+  ,"restoreHierarchy": "Restore hierarchy"
+  ,"hierarchyShortcutHint": "Hierarchy: F2 rename · Alt+M move · Alt+↑/↓ reorder"
+  ,"notes": "Notes"
+  ,"audio": "Audio"
+  ,"noteTitle": "Note title"
+  ,"noteBody": "Write a note…"
+  ,"newNote": "New note"
+  ,"openQuickNote": "Open Quick Note"
+  ,"searchNotes": "Search notes"
+  ,"noNotes": "No notes here."
+  ,"selectNote": "Select or create a note."
+  ,"saving": "Saving…"
+  ,"saved": "Saved"
+  ,"words": "words"
+  ,"characters": "characters"
+  ,"monospace": "Monospace"
+  ,"vaultUnavailable": "The vault is unavailable. Editing is paused."
+  ,"record": "Record"
+  ,"pause": "Pause"
+  ,"resume": "Resume"
+  ,"stop": "Stop"
+  ,"play": "Play"
+  ,"noAudio": "No audio notes yet."
+  ,"audioError": "Audio operation failed"
+  ,"audioPlaybackLimits": "WAV playback has no seek, volume, pause, or completion callback."
+  ,"refresh": "Refresh"
+  ,"openMain": "Open main app"
+  ,"compactMode": "Compact mode"
+  ,"collapseCompleted": "Collapse completed"
+  ,"linkedProjectId": "Linked project/list ID"
+  ,"linkedTaskId": "Linked task ID"
+  ,"policyArchive": "Archive"
+  ,"policyTrash": "Move to Trash"
+  ,"policyKeepCompleted": "Keep in Completed"
+  ,"retentionThirtyDays": "30 days"
+  ,"retentionNever": "Keep forever"
+  ,"completionPolicyHint": "Where a task goes right after you complete it."
+  ,"language": "Language"
+  ,"languageHint": "The workspace, sticky window, and quick note follow this choice."
+  ,"languageSystem": "System default"
+  ,"languageEnglish": "English"
+  ,"languageTurkish": "Türkçe"
+  ,"someday": "Someday · No date"
+  ,"areYouSure": "Are you sure?"
+  ,"confirmTrashTask": "Move this task to Trash?"
+  ,"confirmDeleteForever": "Delete this task permanently?"
+  ,"delete": "Delete"
+  ,"projectOptional": "Project (optional)"
+  ,"generalSection": "General"
+  ,"generalSectionHint": "Task lifecycle and workspace behavior"
+  ,"completionSection": "Completion"
+  ,"trashRetentionSection": "Trash retention"
+  ,"backupSection": "Backup & recovery"
+  ,"syncSection": "Local sync"
+  ,"openVaultForBackups": "Open a vault to manage backups."
+  ,"syncLoadFailed": "Synchronization settings could not be loaded on this device."
+  ,"linkedTask": "Linked task (optional)"
+  ,"noLinkedTask": "No linked task"
+  ,"taskStatusOpen": "Open"
+  ,"taskStatusInProgress": "In progress"
+  ,"taskStatusCompleted": "Completed"
+  ,"taskStatusCancelled": "Cancelled"
+  ,"stickySourceToday": "Today"
+  ,"stickySourceTomorrow": "Tomorrow"
+  ,"stickySourceThisWeek": "This week"
+  ,"stickySourceProject": "Project"
+  ,"stickySourceFolderOrList": "Folder or list"
+  ,"stickySourcePinned": "Pinned"
+  ,"themeSection": "Theme"
+  ,"themeSectionHint": "Applies to the workspace and companion windows."
+  ,"themeObsidianBlack": "Obsidian Black"
+  ,"themeGraphite": "Graphite"
+  ,"themeMidnightIndigo": "Midnight Indigo"
+  ,"themeNordicLight": "Nordic Light"
+  ,"themeWarmPaper": "Warm Paper"
+  ,"addNote": "Add note"
+  ,"addTask": "Add task"
+  ,"moveToProject": "Move to project"
+  ,"assignToProject": "Assign to project"
+  ,"searchProjectsSection": "Projects"
+  ,"searchTasksSection": "Tasks"
+  ,"backupTitle": "Backup & recovery"
+  ,"backupSubtitle": "Portable, verified copies of the complete vault"
+  ,"backupCreateTitle": "Create vault backup"
+  ,"backupCreateBody": "Export a consistent database snapshot with notes, audio, attachments, and a SHA-256 integrity manifest."
+  ,"backupCreateButton": "Choose export folder"
+  ,"backupRestoreTitle": "Restore safely"
+  ,"backupRestoreBody": "Validate archive paths, versions, hashes, and SQLite integrity before creating a separate vault."
+  ,"backupRestoreButton": "Choose backup file"
+  ,"backupSafetyNote": "Backups are not encrypted. Store them as carefully as the original vault. Restore detects corruption and unsafe paths; it does not attempt automatic database repair."
+  ,"backupChooseExportFolder": "Choose an export folder"
+  ,"backupChooseFile": "Choose an ephtodo backup"
+  ,"backupChooseRestoreParent": "Choose a parent folder for the restored vault"
+  ,"backupRestoreConfirmTitle": "Restore into a new vault?"
+  ,"backupRestoreConfirmBody": "ephtodo will validate every file and create a new vault folder. Your active vault will not be changed or overwritten."
+  ,"backupValidateRestore": "Validate & restore"
+  ,"backupFailedGeneric": "The operation failed without changing the active vault."
+  ,"syncHeadline": "Local sync"
+  ,"syncHeadlineHint": "Private-LAN foundation for a future mobile client"
+  ,"syncSecureServer": "Secure server"
+  ,"syncSecureServerHint": "Disabled by default. No cloud relay, public tunnel, UPnP, or wildcard binding."
+  ,"syncServerAvailable": "Server is available"
+  ,"syncServerOff": "Server is off"
+  ,"syncStop": "Stop"
+  ,"syncEnable": "Enable"
+  ,"syncRestoreOnLaunch": "Restore server on launch"
+  ,"syncRestoreOnLaunchHint": "Only after this explicit opt-in; invalid credentials fail closed."
+  ,"syncPassword": "Synchronization password"
+  ,"syncPasswordHint": "Argon2id protected in Windows secure storage"
+  ,"syncSetOrChange": "Set or change"
+  ,"syncPort": "Port {port}"
+  ,"syncPortHint": "Allowed private/dynamic range: 49152–65535"
+  ,"syncChange": "Change"
+  ,"syncTlsFingerprint": "TLS fingerprint"
+  ,"syncCopyFingerprint": "Copy fingerprint"
+  ,"syncPairing": "Pairing"
+  ,"syncPairingHint": "Codes expire after five minutes, work once, and still require desktop approval."
+  ,"syncCreatePairingCode": "Create pairing code"
+  ,"syncPairedDevices": "Paired devices"
+  ,"syncNoPairedDevices": "No devices are paired yet."
+  ,"syncApprove": "Approve"
+  ,"syncReject": "Reject"
+  ,"syncRevoke": "Revoke"
+  ,"stickyEmptyFiltered": "No tasks for this view."
+}

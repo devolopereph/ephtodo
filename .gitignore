@@ -1,0 +1,114 @@
+# Dart / Flutter
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+build/
+coverage/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+secrets/
+local_config.*
+credentials.*
+**/google-services.json
+**/GoogleService-Info.plist
+**/AuthKey_*.p8
+*.keystore
+key.properties
+*.jks
+
+# Personal / machine-local identity (never commit)
+*.local
+*.local.*
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+.ssh/
+.aws/
+.gnupg/
+auth.json
+tokens.json
+personal/
+private/
+me.md
+about-me.md
+contact.md
+.cursor/mcp.json
+.cursor/*.local.*
+
+# User data / vaults
+ephtodo-vault/
+/vault/
+/vaults/
+/user-data/
+/userdata/
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.ogg
+/recordings/
+/attachments/
+/exports/
+/backups/
+/logs/
+/crash_dumps/
+
+# Windows build artifacts
+windows/flutter/ephemeral/
+*.exe
+*.msix
+*.msixupload
+*.appx
+*.appxbundle
+*.cer
+
+# Signing
+signing/
+*.snk
+
+# Phase 0 runtime state
+.phase0/
+
+# Phase 1 runtime verification state
+.phase1/
+
+# Phase 2 runtime verification state
+.phase2/
+
+# Phase 3/4 runtime verification state
+.phase34/
+.phase34-audio/
+
+# Phase 5/6 local release evidence and private planning inputs
+.phase56/
+e1.md
+master_prompt_ephtodo.md
