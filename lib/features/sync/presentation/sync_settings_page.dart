@@ -227,7 +227,7 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
         const SizedBox(height: 16),
         _Section(
           title: AppLocalizations.of(context).syncPairedDevices,
-          subtitle: 'Normal clients receive sync read and write only.',
+          subtitle: AppLocalizations.of(context).syncPairedDevicesHint,
           child: snapshot.devices.isEmpty
               ? _EmptySetting(
                   icon: Icons.devices_other_outlined,
@@ -253,12 +253,12 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
         ),
         const SizedBox(height: 16),
         _Section(
-          title: 'Redacted audit',
-          subtitle: 'No request bodies, credentials, paths, or content.',
+          title: AppLocalizations.of(context).syncRedactedAudit,
+          subtitle: AppLocalizations.of(context).syncRedactedAuditHint,
           child: snapshot.audit.isEmpty
-              ? const _EmptySetting(
+              ? _EmptySetting(
                   icon: Icons.shield_outlined,
-                  text: 'No synchronization security events yet.',
+                  text: AppLocalizations.of(context).syncNoAuditEvents,
                 )
               : Column(
                   children: [
@@ -283,9 +283,8 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
         ),
         const SizedBox(height: 16),
         _Section(
-          title: 'Credential maintenance',
-          subtitle:
-              'Rotation disconnects clients. Reset revokes every paired device.',
+          title: AppLocalizations.of(context).syncCredentialMaintenance,
+          subtitle: AppLocalizations.of(context).syncCredentialMaintenanceHint,
           child: Padding(
             padding: const EdgeInsets.all(14),
             child: Wrap(
@@ -295,12 +294,16 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
                 OutlinedButton.icon(
                   onPressed: _busy ? null : _confirmRotate,
                   icon: const Icon(Icons.autorenew),
-                  label: const Text('Rotate certificate'),
+                  label: Text(
+                    AppLocalizations.of(context).syncRotateCertificate,
+                  ),
                 ),
                 OutlinedButton.icon(
                   onPressed: _busy ? null : _confirmReset,
                   icon: const Icon(Icons.delete_forever_outlined),
-                  label: const Text('Reset all credentials'),
+                  label: Text(
+                    AppLocalizations.of(context).syncResetAllCredentials,
+                  ),
                 ),
               ],
             ),
@@ -310,34 +313,40 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
     );
   }
 
-  String _serverMessage(SyncServerStatus status) => switch (status.state) {
-    SyncServerState.error =>
-      'Could not start securely (${status.errorCode ?? 'unknown error'}).',
-    SyncServerState.starting => 'Starting secure listeners…',
-    SyncServerState.stopping => 'Stopping listeners and clients…',
-    _ => 'No network listener is active.',
-  };
+  String _serverMessage(SyncServerStatus status) {
+    final l10n = AppLocalizations.of(context);
+    return switch (status.state) {
+      SyncServerState.error => l10n.syncCouldNotStartSecurely(
+        status.errorCode ?? l10n.syncUnknownError,
+      ),
+      SyncServerState.starting => l10n.syncStartingListeners,
+      SyncServerState.stopping => l10n.syncStoppingListeners,
+      _ => l10n.syncNoListenerActive,
+    };
+  }
 
   Future<void> _enable() =>
       _run(() => widget.controller.enable(persist: _persistOnLaunch));
 
   Future<void> _confirmDisable() async {
+    final l10n = AppLocalizations.of(context);
     final clients = _snapshot?.server.connectedClients ?? 0;
     final confirmed = await _confirm(
-      'Stop local sync?',
+      l10n.syncStopConfirmTitle,
       clients == 0
-          ? 'The HTTPS and WebSocket listeners will close immediately.'
-          : '$clients connected client(s) will be disconnected immediately.',
-      'Stop server',
+          ? l10n.syncStopConfirmBodyEmpty
+          : l10n.syncStopConfirmBodyClients(clients),
+      l10n.syncStopServer,
     );
     if (confirmed) await _run(widget.controller.disable);
   }
 
   Future<void> _confirmRevoke(SyncDevice device) async {
+    final l10n = AppLocalizations.of(context);
     final confirmed = await _confirm(
-      'Revoke ${device.name}?',
-      'Its current access credential and event connection will stop working.',
-      'Revoke device',
+      l10n.syncRevokeConfirmTitle(device.name),
+      l10n.syncRevokeConfirmBody,
+      l10n.syncRevokeDevice,
     );
     if (confirmed) {
       await _run(() => widget.controller.revoke(device.id));
@@ -345,20 +354,21 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
   }
 
   Future<void> _confirmRotate() async {
+    final l10n = AppLocalizations.of(context);
     final confirmed = await _confirm(
-      'Rotate the TLS certificate?',
-      'Connected clients will be disconnected and must verify the new fingerprint.',
-      'Rotate',
+      l10n.syncRotateConfirmTitle,
+      l10n.syncRotateConfirmBody,
+      l10n.syncRotate,
     );
     if (confirmed) await _run(widget.controller.rotateCertificate);
   }
 
   Future<void> _confirmReset() async {
+    final l10n = AppLocalizations.of(context);
     final confirmed = await _confirm(
-      'Reset all sync credentials?',
-      'This stops the server, revokes every device, and removes the password '
-          'verifier and TLS key from secure storage.',
-      'Reset credentials',
+      l10n.syncResetConfirmTitle,
+      l10n.syncResetConfirmBody,
+      l10n.syncResetCredentials,
     );
     if (confirmed) await _run(widget.controller.resetCredentials);
   }
@@ -372,7 +382,7 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
-              child: const Text('Cancel'),
+              child: Text(AppLocalizations.of(context).cancel),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(context, true),
@@ -388,49 +398,50 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
     final second = TextEditingController();
     final password = await showDialog<String>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Set synchronization password'),
-        content: SizedBox(
-          width: 420,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text(
-                'Use at least 12 characters. The password cannot be recovered.',
-              ),
-              const SizedBox(height: 16),
-              TextField(
-                controller: first,
-                autofocus: true,
-                obscureText: true,
-                decoration: const InputDecoration(labelText: 'Password'),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                controller: second,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Confirm password',
+      builder: (context) {
+        final l10n = AppLocalizations.of(context);
+        return AlertDialog(
+          title: Text(l10n.syncSetPasswordTitle),
+          content: SizedBox(
+            width: 420,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(l10n.syncSetPasswordBody),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: first,
+                  autofocus: true,
+                  obscureText: true,
+                  decoration: InputDecoration(labelText: l10n.syncPasswordField),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                TextField(
+                  controller: second,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: l10n.syncConfirmPassword,
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
-          ),
-          FilledButton(
-            onPressed: () {
-              if (first.text.length >= 12 && first.text == second.text) {
-                Navigator.pop(context, first.text);
-              }
-            },
-            child: const Text('Save securely'),
-          ),
-        ],
-      ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(l10n.cancel),
+            ),
+            FilledButton(
+              onPressed: () {
+                if (first.text.length >= 12 && first.text == second.text) {
+                  Navigator.pop(context, first.text);
+                }
+              },
+              child: Text(l10n.syncSaveSecurely),
+            ),
+          ],
+        );
+      },
     );
     first.dispose();
     second.dispose();
@@ -443,30 +454,33 @@ final class _SyncSettingsPageState extends State<SyncSettingsPage> {
     final controller = TextEditingController(text: current.toString());
     final value = await showDialog<int>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Change local sync port'),
-        content: TextField(
-          controller: controller,
-          autofocus: true,
-          keyboardType: TextInputType.number,
-          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-          decoration: const InputDecoration(
-            labelText: 'Port',
-            helperText: '49152–65535',
+      builder: (context) {
+        final l10n = AppLocalizations.of(context);
+        return AlertDialog(
+          title: Text(l10n.syncChangePortTitle),
+          content: TextField(
+            controller: controller,
+            autofocus: true,
+            keyboardType: TextInputType.number,
+            inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+            decoration: InputDecoration(
+              labelText: l10n.syncPortField,
+              helperText: l10n.syncPortHelper,
+            ),
           ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
-          ),
-          FilledButton(
-            onPressed: () =>
-                Navigator.pop(context, int.tryParse(controller.text)),
-            child: const Text('Apply'),
-          ),
-        ],
-      ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(l10n.cancel),
+            ),
+            FilledButton(
+              onPressed: () =>
+                  Navigator.pop(context, int.tryParse(controller.text)),
+              child: Text(l10n.syncApply),
+            ),
+          ],
+        );
+      },
     );
     controller.dispose();
     if (value != null) await _run(() => widget.controller.setPort(value));
@@ -508,24 +522,29 @@ final class _StatusPill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final tokens = Theme.of(context).extension<AppTokens>()!;
     final (label, color, icon) = switch (status.state) {
       SyncServerState.running => (
-        'Running · API v1',
+        l10n.syncStatusRunning,
         tokens.success,
         Icons.lock_outline,
       ),
       SyncServerState.error => (
-        'Needs attention',
+        l10n.syncStatusNeedsAttention,
         tokens.danger,
         Icons.error_outline,
       ),
       SyncServerState.starting ||
-      SyncServerState.stopping => ('Updating', tokens.warning, Icons.sync),
-      _ => ('Disabled', tokens.secondaryText, Icons.sync_disabled),
+      SyncServerState.stopping => (
+        l10n.syncStatusUpdating,
+        tokens.warning,
+        Icons.sync,
+      ),
+      _ => (l10n.syncStatusDisabled, tokens.secondaryText, Icons.sync_disabled),
     };
     return Semantics(
-      label: 'Local sync status: $label',
+      label: l10n.syncStatusSemantics(label),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 7),
         decoration: BoxDecoration(
@@ -618,36 +637,40 @@ final class _PairingCode extends StatelessWidget {
   final PairingSession session;
 
   @override
-  Widget build(BuildContext context) => Semantics(
-    label: 'Pairing code ${session.code}',
-    child: Padding(
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-              border: Border.all(color: Theme.of(context).dividerColor),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: SelectableText(
-              session.code,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontFeatures: const [FontFeature.tabularFigures()],
-                letterSpacing: 3,
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final expires = session.expiresAt
+        .toLocal()
+        .toIso8601String()
+        .split('.')
+        .first;
+    return Semantics(
+      label: l10n.syncPairingCodeSemantics(session.code),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              decoration: BoxDecoration(
+                border: Border.all(color: Theme.of(context).dividerColor),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: SelectableText(
+                session.code,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontFeatures: const [FontFeature.tabularFigures()],
+                  letterSpacing: 3,
+                ),
               ),
             ),
-          ),
-          const SizedBox(width: 14),
-          Expanded(
-            child: Text(
-              'Expires ${session.expiresAt.toLocal().toIso8601String().split('.').first}',
-            ),
-          ),
-        ],
+            const SizedBox(width: 14),
+            Expanded(child: Text(l10n.syncExpires(expires))),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 }
 
 final class _PendingDevice extends StatelessWidget {
@@ -662,25 +685,22 @@ final class _PendingDevice extends StatelessWidget {
   final VoidCallback? onReject;
 
   @override
-  Widget build(BuildContext context) => ListTile(
-    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
-    leading: const Icon(Icons.phonelink_lock_outlined),
-    title: Text(pending.deviceName),
-    subtitle: Text('Pending explicit approval · ${pending.deviceId}'),
-    trailing: Wrap(
-      spacing: 8,
-      children: [
-        TextButton(
-          onPressed: onReject,
-          child: Text(AppLocalizations.of(context).syncReject),
-        ),
-        FilledButton(
-          onPressed: onApprove,
-          child: Text(AppLocalizations.of(context).syncApprove),
-        ),
-      ],
-    ),
-  );
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    return ListTile(
+      contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+      leading: const Icon(Icons.phonelink_lock_outlined),
+      title: Text(pending.deviceName),
+      subtitle: Text(l10n.syncPendingApproval(pending.deviceId)),
+      trailing: Wrap(
+        spacing: 8,
+        children: [
+          TextButton(onPressed: onReject, child: Text(l10n.syncReject)),
+          FilledButton(onPressed: onApprove, child: Text(l10n.syncApprove)),
+        ],
+      ),
+    );
+  }
 }
 
 final class _DeviceRow extends StatelessWidget {
@@ -689,30 +709,38 @@ final class _DeviceRow extends StatelessWidget {
   final VoidCallback? onRevoke;
 
   @override
-  Widget build(BuildContext context) => ListTile(
-    contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
-    leading: Icon(
-      device.revoked ? Icons.mobile_off_outlined : Icons.phone_android_outlined,
-    ),
-    title: Row(
-      children: [
-        Flexible(child: Text(device.name)),
-        const SizedBox(width: 8),
-        Text(
-          device.revoked ? 'Revoked' : 'Active',
-          style: Theme.of(context).textTheme.labelSmall,
-        ),
-      ],
-    ),
-    subtitle: Text(
-      'Last seen ${device.lastSeenAt?.toLocal().toIso8601String().split('.').first ?? 'never'}'
-      ' · ${device.scopes.map((scope) => scope.wireName).join(', ')}',
-    ),
-    trailing: TextButton(
-      onPressed: onRevoke,
-      child: Text(AppLocalizations.of(context).syncRevoke),
-    ),
-  );
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final seen = device.lastSeenAt == null
+        ? l10n.syncLastSeenNever
+        : device.lastSeenAt!.toLocal().toIso8601String().split('.').first;
+    final scopes = device.scopes.map((scope) => scope.wireName).join(', ');
+    return ListTile(
+      contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
+      leading: Icon(
+        device.revoked
+            ? Icons.mobile_off_outlined
+            : Icons.phone_android_outlined,
+      ),
+      title: Row(
+        children: [
+          Flexible(child: Text(device.name)),
+          const SizedBox(width: 8),
+          Text(
+            device.revoked ? l10n.syncDeviceRevoked : l10n.syncDeviceActive,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+        ],
+      ),
+      subtitle: Text(
+        l10n.syncDeviceSubtitle(l10n.syncLastSeen(seen), scopes),
+      ),
+      trailing: TextButton(
+        onPressed: onRevoke,
+        child: Text(l10n.syncRevoke),
+      ),
+    );
+  }
 }
 
 final class _EmptySetting extends StatelessWidget {

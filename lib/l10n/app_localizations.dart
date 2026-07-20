@@ -1418,6 +1418,294 @@ abstract class AppLocalizations {
   /// **'Revoke'**
   String get syncRevoke;
 
+  /// No description provided for @syncPairedDevicesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Normal clients receive sync read and write only.'**
+  String get syncPairedDevicesHint;
+
+  /// No description provided for @syncRedactedAudit.
+  ///
+  /// In en, this message translates to:
+  /// **'Redacted audit'**
+  String get syncRedactedAudit;
+
+  /// No description provided for @syncRedactedAuditHint.
+  ///
+  /// In en, this message translates to:
+  /// **'No request bodies, credentials, paths, or content.'**
+  String get syncRedactedAuditHint;
+
+  /// No description provided for @syncNoAuditEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'No synchronization security events yet.'**
+  String get syncNoAuditEvents;
+
+  /// No description provided for @syncCredentialMaintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Credential maintenance'**
+  String get syncCredentialMaintenance;
+
+  /// No description provided for @syncCredentialMaintenanceHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotation disconnects clients. Reset revokes every paired device.'**
+  String get syncCredentialMaintenanceHint;
+
+  /// No description provided for @syncRotateCertificate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate certificate'**
+  String get syncRotateCertificate;
+
+  /// No description provided for @syncResetAllCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset all credentials'**
+  String get syncResetAllCredentials;
+
+  /// No description provided for @syncCouldNotStartSecurely.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not start securely ({error}).'**
+  String syncCouldNotStartSecurely(Object error);
+
+  /// No description provided for @syncUnknownError.
+  ///
+  /// In en, this message translates to:
+  /// **'unknown error'**
+  String get syncUnknownError;
+
+  /// No description provided for @syncStartingListeners.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting secure listeners…'**
+  String get syncStartingListeners;
+
+  /// No description provided for @syncStoppingListeners.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopping listeners and clients…'**
+  String get syncStoppingListeners;
+
+  /// No description provided for @syncNoListenerActive.
+  ///
+  /// In en, this message translates to:
+  /// **'No network listener is active.'**
+  String get syncNoListenerActive;
+
+  /// No description provided for @syncStopConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop local sync?'**
+  String get syncStopConfirmTitle;
+
+  /// No description provided for @syncStopConfirmBodyEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'The HTTPS and WebSocket listeners will close immediately.'**
+  String get syncStopConfirmBodyEmpty;
+
+  /// No description provided for @syncStopConfirmBodyClients.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} connected client(s) will be disconnected immediately.'**
+  String syncStopConfirmBodyClients(Object count);
+
+  /// No description provided for @syncStopServer.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop server'**
+  String get syncStopServer;
+
+  /// No description provided for @syncRevokeConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Revoke {name}?'**
+  String syncRevokeConfirmTitle(Object name);
+
+  /// No description provided for @syncRevokeConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Its current access credential and event connection will stop working.'**
+  String get syncRevokeConfirmBody;
+
+  /// No description provided for @syncRevokeDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Revoke device'**
+  String get syncRevokeDevice;
+
+  /// No description provided for @syncRotateConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate the TLS certificate?'**
+  String get syncRotateConfirmTitle;
+
+  /// No description provided for @syncRotateConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected clients will be disconnected and must verify the new fingerprint.'**
+  String get syncRotateConfirmBody;
+
+  /// No description provided for @syncRotate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rotate'**
+  String get syncRotate;
+
+  /// No description provided for @syncResetConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset all sync credentials?'**
+  String get syncResetConfirmTitle;
+
+  /// No description provided for @syncResetConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This stops the server, revokes every device, and removes the password verifier and TLS key from secure storage.'**
+  String get syncResetConfirmBody;
+
+  /// No description provided for @syncResetCredentials.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset credentials'**
+  String get syncResetCredentials;
+
+  /// No description provided for @syncSetPasswordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Set synchronization password'**
+  String get syncSetPasswordTitle;
+
+  /// No description provided for @syncSetPasswordBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least 12 characters. The password cannot be recovered.'**
+  String get syncSetPasswordBody;
+
+  /// No description provided for @syncPasswordField.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get syncPasswordField;
+
+  /// No description provided for @syncConfirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get syncConfirmPassword;
+
+  /// No description provided for @syncSaveSecurely.
+  ///
+  /// In en, this message translates to:
+  /// **'Save securely'**
+  String get syncSaveSecurely;
+
+  /// No description provided for @syncChangePortTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change local sync port'**
+  String get syncChangePortTitle;
+
+  /// No description provided for @syncPortField.
+  ///
+  /// In en, this message translates to:
+  /// **'Port'**
+  String get syncPortField;
+
+  /// No description provided for @syncPortHelper.
+  ///
+  /// In en, this message translates to:
+  /// **'49152–65535'**
+  String get syncPortHelper;
+
+  /// No description provided for @syncApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get syncApply;
+
+  /// No description provided for @syncStatusRunning.
+  ///
+  /// In en, this message translates to:
+  /// **'Running · API v1'**
+  String get syncStatusRunning;
+
+  /// No description provided for @syncStatusNeedsAttention.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs attention'**
+  String get syncStatusNeedsAttention;
+
+  /// No description provided for @syncStatusUpdating.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating'**
+  String get syncStatusUpdating;
+
+  /// No description provided for @syncStatusDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Disabled'**
+  String get syncStatusDisabled;
+
+  /// No description provided for @syncStatusSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Local sync status: {label}'**
+  String syncStatusSemantics(Object label);
+
+  /// No description provided for @syncPairingCodeSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Pairing code {code}'**
+  String syncPairingCodeSemantics(Object code);
+
+  /// No description provided for @syncExpires.
+  ///
+  /// In en, this message translates to:
+  /// **'Expires {when}'**
+  String syncExpires(Object when);
+
+  /// No description provided for @syncPendingApproval.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending explicit approval · {deviceId}'**
+  String syncPendingApproval(Object deviceId);
+
+  /// No description provided for @syncDeviceRevoked.
+  ///
+  /// In en, this message translates to:
+  /// **'Revoked'**
+  String get syncDeviceRevoked;
+
+  /// No description provided for @syncDeviceActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get syncDeviceActive;
+
+  /// No description provided for @syncLastSeen.
+  ///
+  /// In en, this message translates to:
+  /// **'Last seen {when}'**
+  String syncLastSeen(Object when);
+
+  /// No description provided for @syncLastSeenNever.
+  ///
+  /// In en, this message translates to:
+  /// **'never'**
+  String get syncLastSeenNever;
+
+  /// No description provided for @syncDeviceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{seen} · {scopes}'**
+  String syncDeviceSubtitle(Object scopes, Object seen);
+
   /// No description provided for @stickyEmptyFiltered.
   ///
   /// In en, this message translates to:

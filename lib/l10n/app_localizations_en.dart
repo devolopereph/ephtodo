@@ -691,5 +691,175 @@ class AppLocalizationsEn extends AppLocalizations {
   String get syncRevoke => 'Revoke';
 
   @override
+  String get syncPairedDevicesHint =>
+      'Normal clients receive sync read and write only.';
+
+  @override
+  String get syncRedactedAudit => 'Redacted audit';
+
+  @override
+  String get syncRedactedAuditHint =>
+      'No request bodies, credentials, paths, or content.';
+
+  @override
+  String get syncNoAuditEvents => 'No synchronization security events yet.';
+
+  @override
+  String get syncCredentialMaintenance => 'Credential maintenance';
+
+  @override
+  String get syncCredentialMaintenanceHint =>
+      'Rotation disconnects clients. Reset revokes every paired device.';
+
+  @override
+  String get syncRotateCertificate => 'Rotate certificate';
+
+  @override
+  String get syncResetAllCredentials => 'Reset all credentials';
+
+  @override
+  String syncCouldNotStartSecurely(Object error) {
+    return 'Could not start securely ($error).';
+  }
+
+  @override
+  String get syncUnknownError => 'unknown error';
+
+  @override
+  String get syncStartingListeners => 'Starting secure listeners…';
+
+  @override
+  String get syncStoppingListeners => 'Stopping listeners and clients…';
+
+  @override
+  String get syncNoListenerActive => 'No network listener is active.';
+
+  @override
+  String get syncStopConfirmTitle => 'Stop local sync?';
+
+  @override
+  String get syncStopConfirmBodyEmpty =>
+      'The HTTPS and WebSocket listeners will close immediately.';
+
+  @override
+  String syncStopConfirmBodyClients(Object count) {
+    return '$count connected client(s) will be disconnected immediately.';
+  }
+
+  @override
+  String get syncStopServer => 'Stop server';
+
+  @override
+  String syncRevokeConfirmTitle(Object name) {
+    return 'Revoke $name?';
+  }
+
+  @override
+  String get syncRevokeConfirmBody =>
+      'Its current access credential and event connection will stop working.';
+
+  @override
+  String get syncRevokeDevice => 'Revoke device';
+
+  @override
+  String get syncRotateConfirmTitle => 'Rotate the TLS certificate?';
+
+  @override
+  String get syncRotateConfirmBody =>
+      'Connected clients will be disconnected and must verify the new fingerprint.';
+
+  @override
+  String get syncRotate => 'Rotate';
+
+  @override
+  String get syncResetConfirmTitle => 'Reset all sync credentials?';
+
+  @override
+  String get syncResetConfirmBody =>
+      'This stops the server, revokes every device, and removes the password verifier and TLS key from secure storage.';
+
+  @override
+  String get syncResetCredentials => 'Reset credentials';
+
+  @override
+  String get syncSetPasswordTitle => 'Set synchronization password';
+
+  @override
+  String get syncSetPasswordBody =>
+      'Use at least 12 characters. The password cannot be recovered.';
+
+  @override
+  String get syncPasswordField => 'Password';
+
+  @override
+  String get syncConfirmPassword => 'Confirm password';
+
+  @override
+  String get syncSaveSecurely => 'Save securely';
+
+  @override
+  String get syncChangePortTitle => 'Change local sync port';
+
+  @override
+  String get syncPortField => 'Port';
+
+  @override
+  String get syncPortHelper => '49152–65535';
+
+  @override
+  String get syncApply => 'Apply';
+
+  @override
+  String get syncStatusRunning => 'Running · API v1';
+
+  @override
+  String get syncStatusNeedsAttention => 'Needs attention';
+
+  @override
+  String get syncStatusUpdating => 'Updating';
+
+  @override
+  String get syncStatusDisabled => 'Disabled';
+
+  @override
+  String syncStatusSemantics(Object label) {
+    return 'Local sync status: $label';
+  }
+
+  @override
+  String syncPairingCodeSemantics(Object code) {
+    return 'Pairing code $code';
+  }
+
+  @override
+  String syncExpires(Object when) {
+    return 'Expires $when';
+  }
+
+  @override
+  String syncPendingApproval(Object deviceId) {
+    return 'Pending explicit approval · $deviceId';
+  }
+
+  @override
+  String get syncDeviceRevoked => 'Revoked';
+
+  @override
+  String get syncDeviceActive => 'Active';
+
+  @override
+  String syncLastSeen(Object when) {
+    return 'Last seen $when';
+  }
+
+  @override
+  String get syncLastSeenNever => 'never';
+
+  @override
+  String syncDeviceSubtitle(Object scopes, Object seen) {
+    return '$seen · $scopes';
+  }
+
+  @override
   String get stickyEmptyFiltered => 'No tasks for this view.';
 }

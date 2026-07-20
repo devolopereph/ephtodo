@@ -694,5 +694,178 @@ class AppLocalizationsTr extends AppLocalizations {
   String get syncRevoke => 'İptal et';
 
   @override
+  String get syncPairedDevicesHint =>
+      'Normal istemciler yalnızca eşitleme okuma ve yazma alır.';
+
+  @override
+  String get syncRedactedAudit => 'Sansürlü denetim';
+
+  @override
+  String get syncRedactedAuditHint =>
+      'İstek gövdeleri, kimlik bilgileri, yollar veya içerik yok.';
+
+  @override
+  String get syncNoAuditEvents => 'Henüz eşitleme güvenlik olayı yok.';
+
+  @override
+  String get syncCredentialMaintenance => 'Kimlik bilgisi bakımı';
+
+  @override
+  String get syncCredentialMaintenanceHint =>
+      'Döndürme istemcilerin bağlantısını keser. Sıfırlama tüm eşleştirilmiş cihazları iptal eder.';
+
+  @override
+  String get syncRotateCertificate => 'Sertifikayı döndür';
+
+  @override
+  String get syncResetAllCredentials => 'Tüm kimlik bilgilerini sıfırla';
+
+  @override
+  String syncCouldNotStartSecurely(Object error) {
+    return 'Güvenli şekilde başlatılamadı ($error).';
+  }
+
+  @override
+  String get syncUnknownError => 'bilinmeyen hata';
+
+  @override
+  String get syncStartingListeners => 'Güvenli dinleyiciler başlatılıyor…';
+
+  @override
+  String get syncStoppingListeners =>
+      'Dinleyiciler ve istemciler durduruluyor…';
+
+  @override
+  String get syncNoListenerActive => 'Etkin ağ dinleyicisi yok.';
+
+  @override
+  String get syncStopConfirmTitle => 'Yerel eşitleme durdurulsun mu?';
+
+  @override
+  String get syncStopConfirmBodyEmpty =>
+      'HTTPS ve WebSocket dinleyicileri hemen kapanacak.';
+
+  @override
+  String syncStopConfirmBodyClients(Object count) {
+    return '$count bağlı istemcinin bağlantısı hemen kesilecek.';
+  }
+
+  @override
+  String get syncStopServer => 'Sunucuyu durdur';
+
+  @override
+  String syncRevokeConfirmTitle(Object name) {
+    return '$name iptal edilsin mi?';
+  }
+
+  @override
+  String get syncRevokeConfirmBody =>
+      'Mevcut erişim kimlik bilgisi ve olay bağlantısı çalışmayı durduracak.';
+
+  @override
+  String get syncRevokeDevice => 'Cihazı iptal et';
+
+  @override
+  String get syncRotateConfirmTitle => 'TLS sertifikası döndürülsün mü?';
+
+  @override
+  String get syncRotateConfirmBody =>
+      'Bağlı istemcilerin bağlantısı kesilecek ve yeni parmak izini doğrulamaları gerekecek.';
+
+  @override
+  String get syncRotate => 'Döndür';
+
+  @override
+  String get syncResetConfirmTitle =>
+      'Tüm eşitleme kimlik bilgileri sıfırlansın mı?';
+
+  @override
+  String get syncResetConfirmBody =>
+      'Bu işlem sunucuyu durdurur, tüm cihazları iptal eder ve parola doğrulayıcı ile TLS anahtarını güvenli depolamadan kaldırır.';
+
+  @override
+  String get syncResetCredentials => 'Kimlik bilgilerini sıfırla';
+
+  @override
+  String get syncSetPasswordTitle => 'Eşitleme parolasını ayarla';
+
+  @override
+  String get syncSetPasswordBody =>
+      'En az 12 karakter kullanın. Parola kurtarılamaz.';
+
+  @override
+  String get syncPasswordField => 'Parola';
+
+  @override
+  String get syncConfirmPassword => 'Parolayı onayla';
+
+  @override
+  String get syncSaveSecurely => 'Güvenli kaydet';
+
+  @override
+  String get syncChangePortTitle =>
+      'Yerel eşitleme bağlantı noktasını değiştir';
+
+  @override
+  String get syncPortField => 'Bağlantı noktası';
+
+  @override
+  String get syncPortHelper => '49152–65535';
+
+  @override
+  String get syncApply => 'Uygula';
+
+  @override
+  String get syncStatusRunning => 'Çalışıyor · API v1';
+
+  @override
+  String get syncStatusNeedsAttention => 'Dikkat gerekli';
+
+  @override
+  String get syncStatusUpdating => 'Güncelleniyor';
+
+  @override
+  String get syncStatusDisabled => 'Devre dışı';
+
+  @override
+  String syncStatusSemantics(Object label) {
+    return 'Yerel eşitleme durumu: $label';
+  }
+
+  @override
+  String syncPairingCodeSemantics(Object code) {
+    return 'Eşleştirme kodu $code';
+  }
+
+  @override
+  String syncExpires(Object when) {
+    return 'Sona erme $when';
+  }
+
+  @override
+  String syncPendingApproval(Object deviceId) {
+    return 'Açık onay bekleniyor · $deviceId';
+  }
+
+  @override
+  String get syncDeviceRevoked => 'İptal edildi';
+
+  @override
+  String get syncDeviceActive => 'Etkin';
+
+  @override
+  String syncLastSeen(Object when) {
+    return 'Son görülme $when';
+  }
+
+  @override
+  String get syncLastSeenNever => 'hiç';
+
+  @override
+  String syncDeviceSubtitle(Object scopes, Object seen) {
+    return '$seen · $scopes';
+  }
+
+  @override
   String get stickyEmptyFiltered => 'Bu görünüm için görev yok.';
 }
